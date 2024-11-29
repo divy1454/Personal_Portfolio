@@ -34,10 +34,13 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Firefox */
+
+
 input[type=number] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
+
   html{
     background: #101010;
     
@@ -365,15 +368,15 @@ body{
 }
 .contact{
     display: flex;
-    position: absolute;
-    width: 10%;
-    right: 0;
-    top: 0;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    z-index: 3;
+        position: absolute;
+        width: 10%;
+        left: 0;
+        top: 120px;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        z-index: 3
 }
 .contact a{
     z-index: 3;
