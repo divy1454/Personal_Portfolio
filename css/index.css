@@ -322,8 +322,9 @@ body{
 }
 .social-media:hover{
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1.6);
 }
+
 .navigation-links{
     display: flex;
     align-items: center;
@@ -419,7 +420,7 @@ body{
 }
 #about{
     background-color: #101010;
-    display: none;
+    /* display: none; */
     width: 100%;
     height: auto;
     overflow: hidden;
