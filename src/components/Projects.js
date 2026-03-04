@@ -7,8 +7,6 @@ const Projects = () => {
       title: "Enterprise CRM System (Live Production)",
       description: "Developed and maintained a scalable CRM platform for managing leads, tasks, and administrative workflows. Implemented complete lead lifecycle system with secure REST APIs, role-based access control, and dynamic dashboards with search, filtering, and pagination.",
       tech: ["React", "REST API", "JavaScript"],
-      github: "#",
-      live: "#"
     },
     {
       title: "TexPort App (Mobile + Admin Panel)",
