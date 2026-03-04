@@ -2,7 +2,7 @@
   "name": "portfolio-react",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://divy1454.github.io/portfolio-react",
+  "homepage": "https://divy1454.github.io/Personal_Portfolio",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
