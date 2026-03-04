@@ -5,7 +5,7 @@ const Experience = () => {
     {
       title: "Frontend Intern – React Developer",
       company: "Spontaneous Enterprise",
-      period: "Dec 2024 – Present",
+      period: "Dec 2025 – Present",
       description: [
         "Developed and maintained scalable CRM platform for managing leads, tasks, and administrative workflows",
         "Designed modular and reusable React components to ensure maintainable code architecture",
