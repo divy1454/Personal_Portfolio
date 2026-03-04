@@ -18,7 +18,7 @@ const Hero = () => {
           <a href="#contact" className="px-6 py-3 border-2 border-cyan-500 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-500 hover:text-white transition-all">
             Contact Me
           </a>
-          <a href="/Divy_CV.pdf" download className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:scale-105 transition-all flex items-center gap-2 shadow-lg shadow-purple-500/50">
+          <a href={process.env.PUBLIC_URL + '/Divy_CV.pdf'} download className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg font-semibold hover:scale-105 transition-all flex items-center gap-2 shadow-lg shadow-purple-500/50">
             <FaDownload /> Download CV
           </a>
         </div>
