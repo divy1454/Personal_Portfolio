@@ -1,57 +1,45 @@
-# React Portfolio
+# Divy Patel | Frontend Developer Portfolio
 
-A modern, responsive portfolio website built with React.
+A premium, high-performance web portfolio showcasing modern frontend architecture and sleek design components.
 
-## Features
+## 🚀 Features
+- **Modern UI Edge:** Sleek dark-mode aesthetic with custom glassmorphism and subtle neon accents.
+- **Advanced Animations:** Momentum-based scrolling and staggered UI reveals powered by Framer Motion.
+- **Fully Responsive:** Fluid layouts built with standard CSS grids and Flexbox.
+- **Component Driven:** Modular, reusable React components built for scalability.
+- **Integrated Contact System:** Real-time email delivery utilizing EmailJS.
 
-- Responsive design
-- Smooth scrolling navigation
-- Animated hero section
-- Skills showcase
-- Project gallery
-- Contact form
-- Modern UI with gradient effects
+## 🛠️ Tech Stack
+- **Framework:** React 18
+- **Styling:** Vanilla CSS3 + Modern Variables
+- **Animations:** Framer Motion, GSAP-inspired concepts
+- **Email Delivery:** EmailJS
 
-## Installation
+## 📦 Local Operation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/divy1454/Personal_Portfolio.git
+   ```
 
-1. Install dependencies:
-```bash
-npm install
-```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-2. Start the development server:
-```bash
-npm start
-```
+3. Configure EmailJS:
+   Update the `SERVICE_ID`, `TEMPLATE_ID`, and `PUBLIC_KEY` in `src/components/Contact.js` to enable email functionality.
 
-3. Build for production:
-```bash
-npm run build
-```
+4. Start development server:
+   ```bash
+   npm start
+   ```
 
-## Customization
+5. Build for production:
+   ```bash
+   npm run build
+   ```
 
-- Update personal information in components
-- Add your projects in `Projects.js`
-- Modify skills in `Skills.js`
-- Update social links in `Hero.js`
-- Customize colors in `index.css` (CSS variables)
-
-## Technologies Used
-
-- React 18
-- React Icons
-- CSS3 with animations
-- Modern ES6+ JavaScript
-
-## Deployment
-
-Build the project and deploy the `build` folder to any static hosting service like:
-- GitHub Pages
-- Netlify
-- Vercel
-- AWS S3
-
-## License
-
-MIT
+## 👨‍💻 Author
+**Divy Patel**  
+Frontend Developer specializing in React.js and modern JS ecosystems.
+🔗 [LinkedIn](https://www.linkedin.com/in/divy-patel14) | 🔗 [GitHub](https://github.com/divy1454)

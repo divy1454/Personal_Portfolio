@@ -1,57 +1,222 @@
-import React from 'react';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { FaGithub, FaExternalLinkAlt, FaStar, FaFolder } from 'react-icons/fa';
 
 const Projects = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
   const projects = [
     {
-      title: "Enterprise CRM System (Live Production)",
-      description: "Developed and maintained a scalable CRM platform for managing leads, tasks, and administrative workflows. Implemented complete lead lifecycle system with secure REST APIs, role-based access control, and dynamic dashboards with search, filtering, and pagination.",
-      tech: ["React", "REST API", "JavaScript"],
+      title: 'Enterprise CRM System',
+      subtitle: 'Live Production',
+      description: 'Developed and maintained a scalable CRM platform for managing leads, tasks, and administrative workflows. Implemented complete lead lifecycle system with secure REST APIs, role-based access control, and dynamic dashboards.',
+      tech: ['React', 'REST API', 'JavaScript', 'CSS'],
+      featured: true,
+      color: '#22d3ee',
     },
     {
-      title: "TexPort App (Mobile + Admin Panel)",
-      description: "Developed textile management mobile application with staff attendance and salary modules. Implemented secure authentication and subscription-based admin management system with Laravel APIs for real-time data synchronization.",
-      tech: ["React Native", "Laravel API", "MySQL"],
-      github: "https://github.com/divy1454/TexPortApp",
-      live: "https://textile.texportapp.in/"
+      title: 'TexPort App',
+      subtitle: 'Mobile + Admin Panel',
+      description: 'Developed textile management mobile application with staff attendance and salary modules. Implemented secure authentication and subscription-based admin management with real-time data synchronization.',
+      tech: ['React Native', 'Laravel API', 'MySQL'],
+      github: 'https://github.com/divy1454/TexPortApp',
+      live: 'https://textile.texportapp.in/',
+      color: '#8b5cf6',
     },
     {
-      title: "Inventory Management System",
-      description: "Built role-based authentication system with billing, reporting, and product management modules. Complete web application for managing inventory operations.",
-      tech: ["PHP", "MySQL", "Bootstrap"],
-      github: "https://github.com/divy1454/InventoryManagement",
-      live: "#"
-    }
+      title: 'Inventory Management System',
+      subtitle: 'Web Application',
+      description: 'Built role-based authentication system with billing, reporting, and product management modules. Complete web application for managing inventory operations.',
+      tech: ['PHP', 'MySQL', 'Bootstrap'],
+      github: 'https://github.com/divy1454/InventoryManagement',
+      color: '#ec4899',
+    },
   ];
 
   return (
-    <section id="projects" className="py-20 bg-slate-800">
-      <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-4 text-white">Featured Projects</h2>
-        <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mb-12"></div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section id="projects" style={{ padding: '6rem 0', position: 'relative', background: 'rgba(17, 24, 39, 0.5)' }}>
+      <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 1.5rem' }}>
+        {/* Title */}
+        <div className="reveal">
+          <h2 className="section-title gradient-text">Featured Projects</h2>
+          <div className="section-divider" />
+          <p className="section-subtitle">
+            A selection of projects that showcase my skills and passion for development
+          </p>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="stagger-children" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1.75rem' }}>
           {projects.map((project, index) => (
-            <div key={index} className="bg-slate-900 rounded-xl shadow-xl hover:shadow-cyan-500/20 transition-all hover:-translate-y-2 overflow-hidden border border-slate-700 hover:border-cyan-500">
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-3 text-white">{project.title}</h3>
-                <p className="text-gray-400 mb-4 text-sm leading-relaxed">{project.description}</p>
-                
-                <div className="flex flex-wrap gap-2 mb-4">
+            <div
+              key={index}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              style={{
+                borderRadius: '20px',
+                background: 'var(--bg-card)',
+                border: `1px solid ${hoveredIndex === index ? project.color + '40' : 'var(--glass-border)'}`,
+                overflow: 'hidden',
+                transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+                transform: hoveredIndex === index ? 'translateY(-10px)' : 'translateY(0)',
+                boxShadow: hoveredIndex === index
+                  ? `0 25px 60px ${project.color}15, 0 0 0 1px ${project.color}25`
+                  : '0 4px 20px rgba(0,0,0,0.2)',
+                position: 'relative',
+              }}
+            >
+              {/* Top Gradient Bar */}
+              <div style={{
+                height: '4px',
+                background: `linear-gradient(90deg, ${project.color}, ${project.color}60, transparent)`,
+              }} />
+
+              {/* Card Content */}
+              <div style={{ padding: '2rem' }}>
+                {/* Header */}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <div style={{
+                      width: '44px', height: '44px', borderRadius: '12px',
+                      background: `${project.color}15`,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      color: project.color, fontSize: '1.2rem',
+                    }}>
+                      <FaFolder />
+                    </div>
+                    <div>
+                      <h3 style={{
+                        fontSize: '1.15rem', fontWeight: 700,
+                        fontFamily: "'Space Grotesk', sans-serif",
+                        color: 'var(--text-primary)',
+                        marginBottom: '0.15rem',
+                      }}>
+                        {project.title}
+                      </h3>
+                      <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 500 }}>
+                        {project.subtitle}
+                      </span>
+                    </div>
+                  </div>
+                  {project.featured && (
+                    <div style={{
+                      display: 'flex', alignItems: 'center', gap: '0.3rem',
+                      padding: '0.25rem 0.6rem', borderRadius: '999px',
+                      background: 'rgba(251, 191, 36, 0.1)',
+                      border: '1px solid rgba(251, 191, 36, 0.25)',
+                      color: '#fbbf24', fontSize: '0.7rem', fontWeight: 600,
+                    }}>
+                      <FaStar style={{ fontSize: '0.6rem' }} /> Featured
+                    </div>
+                  )}
+                </div>
+
+                {/* Project Number */}
+                <div style={{
+                  position: 'absolute',
+                  top: '1.5rem', right: '1.5rem',
+                  fontSize: '4rem', fontWeight: 900,
+                  fontFamily: "'Space Grotesk', sans-serif",
+                  color: 'rgba(148, 163, 184, 0.05)',
+                  lineHeight: 1,
+                  pointerEvents: 'none',
+                }}>
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+
+                {/* Description */}
+                <p style={{
+                  fontSize: '0.9rem',
+                  color: 'var(--text-secondary)',
+                  lineHeight: 1.7,
+                  marginBottom: '1.5rem',
+                }}>
+                  {project.description}
+                </p>
+
+                {/* Tech Tags */}
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1.5rem' }}>
                   {project.tech.map(tech => (
-                    <span key={tech} className="px-3 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-xs font-semibold border border-cyan-500/30">
+                    <span key={tech} style={{
+                      padding: '0.3rem 0.7rem',
+                      borderRadius: '8px',
+                      background: `${project.color}10`,
+                      border: `1px solid ${project.color}20`,
+                      fontSize: '0.75rem',
+                      color: project.color,
+                      fontWeight: 600,
+                      transition: 'all 0.3s ease',
+                    }}>
                       {tech}
                     </span>
                   ))}
                 </div>
-                
-                <div className="flex gap-4 pt-4 border-t border-slate-700">
-                  <a href={project.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors">
-                    <FaGithub /> Code
-                  </a>
-                  <a href={project.live} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors">
-                    <FaExternalLinkAlt /> Live
-                  </a>
+
+                {/* Links */}
+                <div style={{
+                  display: 'flex', gap: '1rem',
+                  paddingTop: '1.25rem',
+                  borderTop: '1px solid var(--glass-border)',
+                }}>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'flex', alignItems: 'center', gap: '0.5rem',
+                        fontSize: '0.85rem', fontWeight: 500,
+                        color: 'var(--text-secondary)',
+                        textDecoration: 'none',
+                        transition: 'all 0.3s ease',
+                        padding: '0.4rem 0.75rem',
+                        borderRadius: '8px',
+                      }}
+                      onMouseEnter={e => {
+                        e.currentTarget.style.color = project.color;
+                        e.currentTarget.style.background = `${project.color}10`;
+                      }}
+                      onMouseLeave={e => {
+                        e.currentTarget.style.color = 'var(--text-secondary)';
+                        e.currentTarget.style.background = 'transparent';
+                      }}
+                    >
+                      <FaGithub /> Source Code
+                    </a>
+                  )}
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'flex', alignItems: 'center', gap: '0.5rem',
+                        fontSize: '0.85rem', fontWeight: 500,
+                        color: 'var(--text-secondary)',
+                        textDecoration: 'none',
+                        transition: 'all 0.3s ease',
+                        padding: '0.4rem 0.75rem',
+                        borderRadius: '8px',
+                      }}
+                      onMouseEnter={e => {
+                        e.currentTarget.style.color = project.color;
+                        e.currentTarget.style.background = `${project.color}10`;
+                      }}
+                      onMouseLeave={e => {
+                        e.currentTarget.style.color = 'var(--text-secondary)';
+                        e.currentTarget.style.background = 'transparent';
+                      }}
+                    >
+                      <FaExternalLinkAlt /> Live Demo
+                    </a>
+                  )}
+                  {!project.github && !project.live && (
+                    <span style={{
+                      fontSize: '0.8rem', color: 'var(--text-muted)', fontStyle: 'italic',
+                      padding: '0.4rem 0',
+                    }}>
+                      🔒 Private / NDA Protected
+                    </span>
+                  )}
                 </div>
               </div>
             </div>

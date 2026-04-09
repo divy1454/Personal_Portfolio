@@ -17,3 +17,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# AI / Editor
+.claude/
+.vscode/
+
+# Ignored build output in root
+/asset-manifest.json
+/index.html
+/static/
+.nojekyll

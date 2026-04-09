@@ -4,6 +4,9 @@
   "private": true,
   "homepage": "https://divy1454.github.io/Personal_Portfolio",
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "framer-motion": "^12.38.0",
+    "lenis": "^1.3.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
