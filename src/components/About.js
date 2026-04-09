@@ -30,7 +30,7 @@ const About = () => {
               overflow: 'hidden',
               border: '1px solid var(--glass-border)',
               background: 'var(--bg-card)',
-              boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
+              boxShadow: '0 20px 60px var(--card-shadow)',
             }}>
               {/* Terminal Header */}
               <div style={{
@@ -38,7 +38,7 @@ const About = () => {
                 alignItems: 'center',
                 gap: '0.5rem',
                 padding: '0.875rem 1.25rem',
-                background: 'rgba(0,0,0,0.3)',
+                background: 'var(--terminal-header-bg)',
                 borderBottom: '1px solid var(--glass-border)',
               }}>
                 <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ff5f57' }} />
@@ -50,24 +50,16 @@ const About = () => {
               </div>
               {/* Terminal Body */}
               <div style={{ padding: '1.5rem', fontFamily: "'Courier New', monospace", fontSize: '0.85rem', lineHeight: 1.8 }}>
-                <div><span style={{ color: 'var(--accent-cyan)' }}>const</span> <span style={{ color: '#e2e8f0' }}>developer</span> <span style={{ color: 'var(--accent-pink)' }}>=</span> {'{'}</div>
-                <div style={{ paddingLeft: '1.5rem' }}><span style={{ color: 'var(--accent-violet)' }}>name</span>: <span style={{ color: '#a5d6a7' }}>"Divy Patel"</span>,</div>
-                <div style={{ paddingLeft: '1.5rem' }}><span style={{ color: 'var(--accent-violet)' }}>role</span>: <span style={{ color: '#a5d6a7' }}>"Frontend Developer"</span>,</div>
-                <div style={{ paddingLeft: '1.5rem' }}><span style={{ color: 'var(--accent-violet)' }}>skills</span>: [<span style={{ color: '#a5d6a7' }}>"React"</span>, <span style={{ color: '#a5d6a7' }}>"Node.js"</span>, <span style={{ color: '#a5d6a7' }}>"Laravel"</span>],</div>
-                <div style={{ paddingLeft: '1.5rem' }}><span style={{ color: 'var(--accent-violet)' }}>passion</span>: <span style={{ color: '#a5d6a7' }}>"Building great UX"</span>,</div>
-                <div style={{ paddingLeft: '1.5rem' }}><span style={{ color: 'var(--accent-violet)' }}>available</span>: <span style={{ color: 'var(--accent-cyan)' }}>true</span></div>
+                <div><span className="code-keyword">const</span> <span className="code-identifier">developer</span> <span className="code-operator">=</span> {'{'}</div>
+                <div style={{ paddingLeft: '1.5rem' }}><span className="code-keyword">name</span>: <span className="code-string">"Divy Patel"</span>,</div>
+                <div style={{ paddingLeft: '1.5rem' }}><span className="code-keyword">role</span>: <span className="code-string">"Frontend Developer"</span>,</div>
+                <div style={{ paddingLeft: '1.5rem' }}><span className="code-keyword">skills</span>: [<span className="code-string">"React"</span>, <span className="code-string">"Node.js"</span>, <span className="code-string">"Laravel"</span>],</div>
+                <div style={{ paddingLeft: '1.5rem' }}><span className="code-keyword">passion</span>: <span className="code-string">"Building great UX"</span>,</div>
+                <div style={{ paddingLeft: '1.5rem' }}><span className="code-keyword">available</span>: <span className="code-boolean">true</span></div>
                 <div>{'}'};</div>
                 <div style={{ marginTop: '0.5rem' }}>
-                  <span style={{ color: 'var(--text-muted)' }}>{'>'}</span>
-                  <span style={{
-                    display: 'inline-block',
-                    width: '8px',
-                    height: '16px',
-                    background: 'var(--accent-cyan)',
-                    marginLeft: '6px',
-                    animation: 'blink 1s step-end infinite',
-                    verticalAlign: 'text-bottom',
-                  }} />
+                  <span className="code-prompt">{'>'}</span>
+                  <span className="code-cursor" />
                 </div>
               </div>
             </div>
@@ -94,18 +86,18 @@ const About = () => {
                   style={{
                     padding: '1rem 1.25rem',
                     borderRadius: '12px',
-                    background: 'rgba(148, 163, 184, 0.04)',
+                    background: 'var(--highlight-bg)',
                     border: '1px solid var(--glass-border)',
                     transition: 'all 0.3s ease',
                     cursor: 'default',
                   }}
                   onMouseEnter={e => {
                     e.currentTarget.style.borderColor = 'rgba(34, 211, 238, 0.3)';
-                    e.currentTarget.style.background = 'rgba(34, 211, 238, 0.04)';
+                    e.currentTarget.style.background = 'var(--highlight-bg-hover)';
                   }}
                   onMouseLeave={e => {
                     e.currentTarget.style.borderColor = 'var(--glass-border)';
-                    e.currentTarget.style.background = 'rgba(148, 163, 184, 0.04)';
+                    e.currentTarget.style.background = 'var(--highlight-bg)';
                   }}
                 >
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.4rem' }}>

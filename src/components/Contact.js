@@ -70,7 +70,7 @@ const Contact = () => {
     width: '100%',
     padding: '1rem 1.25rem',
     paddingTop: formData[fieldName] || focusedField === fieldName ? '1.5rem' : '1rem',
-    background: 'rgba(15, 23, 42, 0.6)',
+    background: 'var(--input-bg)',
     border: `1px solid ${focusedField === fieldName ? 'var(--accent-cyan)' : 'var(--glass-border)'}`,
     borderRadius: '12px',
     color: 'var(--text-primary)',
@@ -197,7 +197,7 @@ const Contact = () => {
                   >
                     <div style={{
                       width: '42px', height: '42px', borderRadius: '12px',
-                      background: 'rgba(34, 211, 238, 0.08)',
+                      background: 'var(--highlight-bg-hover)',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       color: 'var(--accent-cyan)', fontSize: '1rem',
                       flexShrink: 0,
@@ -225,7 +225,7 @@ const Contact = () => {
               borderRadius: '20px',
               background: 'var(--bg-card)',
               border: '1px solid var(--glass-border)',
-              boxShadow: '0 20px 60px rgba(0,0,0,0.2)',
+              boxShadow: '0 20px 60px var(--card-shadow-light)',
             }}>
               <form ref={formRef} onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
                 {/* Name */}

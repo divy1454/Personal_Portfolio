@@ -124,7 +124,7 @@ const Experience = () => {
                     <div style={{
                       display: 'flex', alignItems: 'center', gap: '0.4rem',
                       padding: '0.3rem 0.75rem', borderRadius: '999px',
-                      background: 'rgba(34, 211, 238, 0.08)',
+                      background: 'var(--highlight-bg-hover)',
                       border: '1px solid rgba(34, 211, 238, 0.2)',
                       fontSize: '0.8rem', color: 'var(--accent-cyan)', fontWeight: 500,
                     }}>
@@ -132,7 +132,7 @@ const Experience = () => {
                     </div>
                     <span style={{
                       padding: '0.2rem 0.6rem', borderRadius: '999px',
-                      background: 'rgba(139, 92, 246, 0.1)',
+                      background: 'var(--highlight-bg)',
                       border: '1px solid rgba(139, 92, 246, 0.2)',
                       fontSize: '0.7rem', color: 'var(--accent-violet)', fontWeight: 600,
                       textTransform: 'uppercase', letterSpacing: '0.05em',
@@ -174,7 +174,7 @@ const Experience = () => {
                     <span key={tech} style={{
                       padding: '0.3rem 0.75rem',
                       borderRadius: '8px',
-                      background: 'rgba(139, 92, 246, 0.08)',
+                      background: 'var(--highlight-bg)',
                       border: '1px solid rgba(139, 92, 246, 0.15)',
                       fontSize: '0.75rem',
                       color: 'var(--accent-violet)',

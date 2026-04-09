@@ -18,6 +18,66 @@
   --border-color: rgba(255, 255, 255, 0.1);
   --glass-bg: rgba(26, 26, 26, 0.6);
   --glass-border: rgba(255, 255, 255, 0.08);
+  /* Theme-adaptive utility colors */
+  --section-tinted-bg: rgba(17, 24, 39, 0.5);
+  --footer-bg: rgba(5, 8, 18, 0.8);
+  --input-bg: rgba(15, 23, 42, 0.6);
+  --card-shadow: rgba(0, 0, 0, 0.3);
+  --card-shadow-strong: rgba(0, 0, 0, 0.5);
+  --card-shadow-light: rgba(0, 0, 0, 0.2);
+  --highlight-bg: rgba(148, 163, 184, 0.04);
+  --highlight-bg-hover: rgba(34, 211, 238, 0.04);
+  --code-text: #e2e8f0;
+  --terminal-header-bg: rgba(0, 0, 0, 0.3);
+  --nav-bg: rgba(15, 23, 42, 0.85);
+  --nav-hover-bg: rgba(148, 163, 184, 0.08);
+  --active-nav-bg: rgba(34, 211, 238, 0.1);
+  --tag-subtle-bg: rgba(255, 255, 255, 0.05);
+  --social-icon-bg: rgba(148, 163, 184, 0.06);
+  --selection-bg: rgba(34, 211, 238, 0.3);
+  --progress-bar-bg: rgba(148, 163, 184, 0.1);
+  --glow-alpha: 0.15;
+  --bloom-alpha: 0.15;
+  --project-number-alpha: 0.05;
+}
+
+/* ===== Light Theme ===== */
+[data-theme="light"] {
+  --bg-primary: #F0F2F5;
+  --bg-secondary: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #E8ECF1;
+  --accent-cyan: #0891B2;
+  --accent-violet: #7C3AED;
+  --accent-pink: #DB2777;
+  --accent-blue: #2563EB;
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-muted: #6B7280;
+  --border-color: rgba(0, 0, 0, 0.12);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  /* Theme-adaptive utility colors */
+  --section-tinted-bg: rgba(243, 244, 246, 0.9);
+  --footer-bg: rgba(243, 244, 246, 0.95);
+  --input-bg: rgba(249, 250, 251, 0.9);
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --card-shadow-strong: rgba(0, 0, 0, 0.12);
+  --card-shadow-light: rgba(0, 0, 0, 0.06);
+  --highlight-bg: rgba(37, 99, 235, 0.06);
+  --highlight-bg-hover: rgba(37, 99, 235, 0.12);
+  --code-text: #1F2937;
+  --terminal-header-bg: rgba(243, 244, 246, 0.9);
+  --nav-bg: rgba(255, 255, 255, 0.9);
+  --nav-hover-bg: rgba(37, 99, 235, 0.08);
+  --active-nav-bg: rgba(37, 99, 235, 0.12);
+  --tag-subtle-bg: rgba(37, 99, 235, 0.08);
+  --social-icon-bg: rgba(107, 114, 128, 0.1);
+  --selection-bg: rgba(37, 99, 235, 0.25);
+  --progress-bar-bg: rgba(107, 114, 128, 0.15);
+  --glow-alpha: 0.12;
+  --bloom-alpha: 0.12;
+  --project-number-alpha: 0.08;
 }
 
 /* ===== Base Styles ===== */
@@ -238,15 +298,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .glass-strong {
-  background: rgba(15, 23, 42, 0.85);
+  background: var(--nav-bg);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(148, 163, 184, 0.2);
+  border: 1px solid var(--glass-border);
 }
 
 /* ===== Gradient Text Utility ===== */
 .gradient-text {
-  background: linear-gradient(135deg, #FFFFFF, var(--text-secondary));
+  background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -326,6 +386,63 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ===== Selection ===== */
 ::selection {
-  background: rgba(34, 211, 238, 0.3);
-  color: #fff;
+  background: var(--selection-bg);
+  color: var(--text-primary);
+}
+
+/* ===== Code Syntax Highlighting (Theme-Aware) ===== */
+.code-keyword {
+  color: #7C3AED;
+  font-weight: 600;
+}
+.code-identifier {
+  color: #0891B2;
+}
+.code-operator {
+  color: #374151;
+}
+.code-string {
+  color: #059669;
+  font-weight: 500;
+}
+.code-boolean {
+  color: #DC2626;
+  font-weight: 600;
+}
+.code-prompt {
+  color: #7C3AED;
+  font-weight: 600;
+}
+.code-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  background: #0891B2;
+  margin-left: 6px;
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+/* Dark mode overrides for code */
+[data-theme="dark"] .code-keyword { color: #A8C7FA; }
+[data-theme="dark"] .code-identifier { color: #2DD4BF; }
+[data-theme="dark"] .code-operator { color: #9AA0A6; }
+[data-theme="dark"] .code-string { color: #A7F3D0; }
+[data-theme="dark"] .code-boolean { color: #F87171; }
+[data-theme="dark"] .code-prompt { color: #A8C7FA; }
+[data-theme="dark"] .code-cursor { background: #2DD4BF; }
+
+/* ===== Theme Transition ===== */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, box-shadow;
+  transition-duration: 0s;
+}
+
+[data-theme] *,
+[data-theme] *::before,
+[data-theme] *::after {
+  transition-duration: 0.3s;
+  transition-timing-function: ease;
 }

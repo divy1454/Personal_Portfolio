@@ -55,7 +55,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" style={{ padding: '6rem 0', position: 'relative', background: 'rgba(17, 24, 39, 0.5)' }}>
+    <section id="skills" style={{ padding: '6rem 0', position: 'relative', background: 'var(--section-tinted-bg)' }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 1.5rem' }}>
         {/* Title */}
         <div className="reveal">
@@ -117,7 +117,7 @@ const Skills = () => {
                     <div style={{
                       width: '100%', height: '4px',
                       borderRadius: '999px',
-                      background: 'rgba(148, 163, 184, 0.1)',
+                      background: 'var(--progress-bar-bg)',
                       overflow: 'hidden',
                     }}>
                       <div style={{

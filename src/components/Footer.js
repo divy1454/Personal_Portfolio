@@ -12,7 +12,7 @@ const Footer = () => {
   return (
     <footer style={{
       position: 'relative',
-      background: 'rgba(5, 8, 18, 0.8)',
+      background: 'var(--footer-bg)',
       borderTop: '1px solid var(--glass-border)',
     }}>
       {/* Gradient Line */}
@@ -120,7 +120,7 @@ const Footer = () => {
                     width: '40px', height: '40px',
                     borderRadius: '10px',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    background: 'rgba(148, 163, 184, 0.06)',
+                    background: 'var(--social-icon-bg)',
                     border: '1px solid var(--glass-border)',
                     color: 'var(--text-secondary)',
                     fontSize: '1.1rem',
@@ -130,13 +130,13 @@ const Footer = () => {
                   onMouseEnter={e => {
                     e.currentTarget.style.color = 'var(--accent-cyan)';
                     e.currentTarget.style.borderColor = 'var(--accent-cyan)';
-                    e.currentTarget.style.background = 'rgba(34, 211, 238, 0.08)';
+                    e.currentTarget.style.background = 'var(--highlight-bg-hover)';
                     e.currentTarget.style.transform = 'translateY(-3px)';
                   }}
                   onMouseLeave={e => {
                     e.currentTarget.style.color = 'var(--text-secondary)';
                     e.currentTarget.style.borderColor = 'var(--glass-border)';
-                    e.currentTarget.style.background = 'rgba(148, 163, 184, 0.06)';
+                    e.currentTarget.style.background = 'var(--social-icon-bg)';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
@@ -158,35 +158,9 @@ const Footer = () => {
           flexWrap: 'wrap',
           gap: '1rem',
         }}>
-          <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-            © {new Date().getFullYear()} Divy Patel. Built with <FaHeart style={{ color: 'var(--accent-pink)', verticalAlign: 'middle', fontSize: '0.7rem' }} /> and React
+          <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', }}>
+            © {new Date().getFullYear()} Divy Patel.
           </p>
-
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            style={{
-              display: 'flex', alignItems: 'center', gap: '0.4rem',
-              padding: '0.4rem 0.75rem',
-              borderRadius: '8px',
-              border: '1px solid var(--glass-border)',
-              background: 'transparent',
-              color: 'var(--text-muted)',
-              fontSize: '0.8rem',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease',
-              fontFamily: "'Inter', sans-serif",
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.color = 'var(--accent-cyan)';
-              e.currentTarget.style.borderColor = 'var(--accent-cyan)';
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.color = 'var(--text-muted)';
-              e.currentTarget.style.borderColor = 'var(--glass-border)';
-            }}
-          >
-            <FaChevronUp style={{ fontSize: '0.65rem' }} /> Back to top
-          </button>
         </div>
       </div>
 

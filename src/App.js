@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Lenis from 'lenis';
+import { ThemeProvider } from './context/ThemeContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -61,6 +62,7 @@ function App() {
   };
 
   return (
+    <ThemeProvider>
     <div style={{ background: 'var(--bg-primary)', minHeight: '100vh', position: 'relative', overflowX: 'hidden' }}>
       
       {/* Sleek soft glow backgrounds */}
@@ -108,6 +110,7 @@ function App() {
         ↑
       </button>
     </div>
+    </ThemeProvider>
   );
 }
 

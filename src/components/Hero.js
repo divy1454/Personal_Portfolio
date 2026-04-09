@@ -59,17 +59,17 @@ const Hero = () => {
 
   const childVariant = {
     hidden: { y: 60, opacity: 0 },
-    show: { 
-      y: 0, 
-      opacity: 1, 
-      transition: { type: 'spring', bounce: 0, duration: 0.8, ease: [0.16, 1, 0.3, 1] } 
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: { type: 'spring', bounce: 0, duration: 0.8, ease: [0.16, 1, 0.3, 1] }
     },
   };
 
   return (
     <section id="home" className="ag-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', paddingTop: '80px' }}>
-      
-      <motion.div 
+
+      <motion.div
         variants={parentVariant}
         initial="hidden"
         animate="show"
@@ -77,8 +77,8 @@ const Hero = () => {
       >
         {/* Left Side: Text Details */}
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-          
-          <motion.div variants={childVariant} style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 1rem', borderRadius: '32px', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border-color)', marginBottom: '1.5rem', fontSize: '0.875rem', fontWeight: 500, color: 'var(--text-secondary)' }}>
+
+          <motion.div variants={childVariant} style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 1rem', borderRadius: '32px', background: 'var(--tag-subtle-bg)', border: '1px solid var(--border-color)', marginBottom: '1.5rem', fontSize: '0.875rem', fontWeight: 500, color: 'var(--text-secondary)' }}>
             <span style={{ marginRight: '0.5rem', width: '8px', height: '8px', borderRadius: '50%', background: 'var(--accent-blue)', display: 'inline-block' }}></span>
             Available for new opportunities
           </motion.div>
@@ -116,33 +116,8 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Right Side: IDE Mockup */}
-        <motion.div variants={childVariant} className="ide-card" style={{ display: 'flex', flexDirection: 'column', height: '400px', width: '100%', maxWidth: '600px', margin: '0 auto' }}>
-          {/* Card Header */}
-          <div style={{ display: 'flex', alignItems: 'center', padding: '1rem 1.5rem', borderBottom: '1px solid var(--border-color)', background: 'rgba(255,255,255,0.02)' }}>
-            <div style={{ display: 'flex', gap: '8px' }}>
-              <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#EF4444' }} />
-              <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#F59E0B' }} />
-              <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#10B981' }} />
-            </div>
-            <div style={{ margin: '0 auto', fontSize: '0.875rem', color: 'var(--text-muted)', fontFamily: 'monospace' }}>terminal ~ bash</div>
-          </div>
-          {/* Card Body */}
-          <div style={{ padding: '2rem 1.5rem', flex: 1, fontFamily: 'monospace', fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>
-            <div style={{ display: 'flex', gap: '1rem' }}><span style={{ color: 'var(--accent-blue)' }}>~</span> <span>npx create-antigravity-app portfolio</span></div>
-            <div style={{ color: 'var(--text-muted)', marginTop: '0.5rem' }}>Installing dependencies...</div>
-            <div style={{ color: '#10B981', marginTop: '0.5rem' }}>✔ React & Framer Motion</div>
-            <div style={{ color: '#10B981' }}>✔ GSAP-like Scroll Dynamics</div>
-            <div style={{ color: '#10B981', marginBottom: '1rem' }}>✔ Sleek Developer Aesthetic</div>
-            <div style={{ display: 'flex', gap: '1rem' }}><span style={{ color: 'var(--accent-blue)' }}>~</span> <span>npm start</span></div>
-            <motion.div 
-               animate={{ opacity: [0, 1] }} 
-               transition={{ repeat: Infinity, duration: 1 }} 
-               style={{ display: 'inline-block', width: '8px', height: '1.2em', background: 'var(--text-primary)', marginTop: '2px' }} 
-            />
-          </div>
-        </motion.div>
-        
+        {/* IDE Mockup removed */}
+
       </motion.div>
 
       {/* Scroll Down Indicator */}

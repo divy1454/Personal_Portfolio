@@ -33,7 +33,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" style={{ padding: '6rem 0', position: 'relative', background: 'rgba(17, 24, 39, 0.5)' }}>
+    <section id="projects" style={{ padding: '6rem 0', position: 'relative', background: 'var(--section-tinted-bg)' }}>
       <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '0 1.5rem' }}>
         {/* Title */}
         <div className="reveal">
@@ -60,7 +60,7 @@ const Projects = () => {
                 transform: hoveredIndex === index ? 'translateY(-10px)' : 'translateY(0)',
                 boxShadow: hoveredIndex === index
                   ? `0 25px 60px ${project.color}15, 0 0 0 1px ${project.color}25`
-                  : '0 4px 20px rgba(0,0,0,0.2)',
+                  : '0 4px 20px var(--card-shadow-light)',
                 position: 'relative',
               }}
             >
@@ -116,7 +116,7 @@ const Projects = () => {
                   top: '1.5rem', right: '1.5rem',
                   fontSize: '4rem', fontWeight: 900,
                   fontFamily: "'Space Grotesk', sans-serif",
-                  color: 'rgba(148, 163, 184, 0.05)',
+                  color: 'rgba(148, 163, 184, var(--project-number-alpha))',
                   lineHeight: 1,
                   pointerEvents: 'none',
                 }}>

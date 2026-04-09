@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import ThemeToggle from './ThemeToggle';
 
 const navItems = ['Home', 'About', 'Skills', 'Experience', 'Projects', 'Contact'];
 
@@ -39,7 +40,7 @@ const Header = () => {
         top: 0,
         zIndex: 100,
         transition: 'all 0.4s ease',
-        boxShadow: scrolled ? '0 8px 32px rgba(0,0,0,0.3)' : 'none',
+        boxShadow: scrolled ? '0 8px 32px var(--card-shadow)' : 'none',
         borderBottom: '1px solid var(--glass-border)',
       }}
     >
@@ -65,7 +66,7 @@ const Header = () => {
           </a>
 
           {/* Desktop Nav */}
-          <div className="desktop-nav" style={{ display: 'flex', gap: '0.5rem' }}>
+          <div className="desktop-nav" style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
             {navItems.map(item => {
               const isActive = activeSection === item.toLowerCase();
               return (
@@ -79,14 +80,14 @@ const Header = () => {
                     fontSize: '0.9rem',
                     fontWeight: 500,
                     color: isActive ? 'var(--accent-cyan)' : 'var(--text-secondary)',
-                    background: isActive ? 'rgba(34, 211, 238, 0.1)' : 'transparent',
+                    background: isActive ? 'var(--active-nav-bg)' : 'transparent',
                     transition: 'all 0.3s ease',
                     position: 'relative',
                   }}
                   onMouseEnter={e => {
                     if (!isActive) {
                       e.target.style.color = 'var(--text-primary)';
-                      e.target.style.background = 'rgba(148, 163, 184, 0.08)';
+                      e.target.style.background = 'var(--nav-hover-bg)';
                     }
                   }}
                   onMouseLeave={e => {
@@ -100,27 +101,30 @@ const Header = () => {
                 </a>
               );
             })}
+            <div style={{ width: '1px', height: '24px', background: 'var(--glass-border)', margin: '0 0.25rem' }} />
+            <ThemeToggle />
           </div>
 
-          {/* Mobile Toggle */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="mobile-toggle"
-            style={{
-              display: 'none',
-              background: 'none',
-              border: 'none',
-              color: 'var(--text-primary)',
-              fontSize: '1.4rem',
-              cursor: 'pointer',
-              padding: '0.5rem',
-              borderRadius: '8px',
-              transition: 'all 0.3s ease',
-            }}
-            aria-label="Toggle navigation"
-          >
-            {isOpen ? <FaTimes /> : <FaBars />}
-          </button>
+          {/* Mobile Controls */}
+          <div className="mobile-toggle" style={{ display: 'none', alignItems: 'center', gap: '0.5rem' }}>
+            <ThemeToggle />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: 'var(--text-primary)',
+                fontSize: '1.4rem',
+                cursor: 'pointer',
+                padding: '0.5rem',
+                borderRadius: '8px',
+                transition: 'all 0.3s ease',
+              }}
+              aria-label="Toggle navigation"
+            >
+              {isOpen ? <FaTimes /> : <FaBars />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -148,7 +152,7 @@ const Header = () => {
                   fontSize: '1rem',
                   fontWeight: 500,
                   color: isActive ? 'var(--accent-cyan)' : 'var(--text-secondary)',
-                  background: isActive ? 'rgba(34, 211, 238, 0.1)' : 'transparent',
+                  background: isActive ? 'var(--active-nav-bg)' : 'transparent',
                   transition: 'all 0.3s ease',
                   animationDelay: `${index * 0.05}s`,
                 }}
