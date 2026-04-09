@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaEnvelope, FaHeart, FaChevronUp } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
   const quickLinks = ['Home', 'About', 'Skills', 'Experience', 'Projects', 'Contact'];
