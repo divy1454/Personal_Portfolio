@@ -1,13 +1,28 @@
 {
   "files": {
-    "main.css": "/Personal_Portfolio/static/css/main.80b6abc2.css",
-    "main.js": "/Personal_Portfolio/static/js/main.63b91ff7.js",
+    "main.css": "/Personal_Portfolio/static/css/main.1fb08052.css",
+    "main.js": "/Personal_Portfolio/static/js/main.57655555.js",
+    "static/media/fraunces-latin-full-normal.woff2": "/Personal_Portfolio/static/media/fraunces-latin-full-normal.4e5db5e80eb27f260ed3.woff2",
+    "static/media/fraunces-latin-ext-full-normal.woff2": "/Personal_Portfolio/static/media/fraunces-latin-ext-full-normal.587cc2e45c55dd475854.woff2",
+    "static/media/fraunces-vietnamese-full-normal.woff2": "/Personal_Portfolio/static/media/fraunces-vietnamese-full-normal.902ed62e0c1ac09fad15.woff2",
+    "static/media/instrument-sans-latin-600-normal.woff": "/Personal_Portfolio/static/media/instrument-sans-latin-600-normal.9919c2f33c6dcd9d81ef.woff",
+    "static/media/instrument-sans-latin-500-normal.woff": "/Personal_Portfolio/static/media/instrument-sans-latin-500-normal.9de0d6acfd7bd15fa6dc.woff",
+    "static/media/instrument-sans-latin-400-normal.woff": "/Personal_Portfolio/static/media/instrument-sans-latin-400-normal.96bc6cbd843628e3ae48.woff",
+    "static/media/instrument-sans-latin-600-normal.woff2": "/Personal_Portfolio/static/media/instrument-sans-latin-600-normal.8330417796733e1db6b3.woff2",
+    "static/media/instrument-sans-latin-500-normal.woff2": "/Personal_Portfolio/static/media/instrument-sans-latin-500-normal.1e8bd39a9dcd59d79ede.woff2",
+    "static/media/instrument-sans-latin-400-normal.woff2": "/Personal_Portfolio/static/media/instrument-sans-latin-400-normal.e6aa1b8471a95ead1d2f.woff2",
+    "static/media/instrument-sans-latin-ext-600-normal.woff": "/Personal_Portfolio/static/media/instrument-sans-latin-ext-600-normal.ad876856b36db49bab4a.woff",
+    "static/media/instrument-sans-latin-ext-500-normal.woff": "/Personal_Portfolio/static/media/instrument-sans-latin-ext-500-normal.f769ab3cebfc3c78f53b.woff",
+    "static/media/instrument-sans-latin-ext-400-normal.woff": "/Personal_Portfolio/static/media/instrument-sans-latin-ext-400-normal.fdee5139003c9dcbc399.woff",
+    "static/media/instrument-sans-latin-ext-500-normal.woff2": "/Personal_Portfolio/static/media/instrument-sans-latin-ext-500-normal.e934371bc8d380b0427b.woff2",
+    "static/media/instrument-sans-latin-ext-600-normal.woff2": "/Personal_Portfolio/static/media/instrument-sans-latin-ext-600-normal.d0888c9f1054024a8ab1.woff2",
+    "static/media/instrument-sans-latin-ext-400-normal.woff2": "/Personal_Portfolio/static/media/instrument-sans-latin-ext-400-normal.7d6f64fd11a42d9dca07.woff2",
     "index.html": "/Personal_Portfolio/index.html",
-    "main.80b6abc2.css.map": "/Personal_Portfolio/static/css/main.80b6abc2.css.map",
-    "main.63b91ff7.js.map": "/Personal_Portfolio/static/js/main.63b91ff7.js.map"
+    "main.1fb08052.css.map": "/Personal_Portfolio/static/css/main.1fb08052.css.map",
+    "main.57655555.js.map": "/Personal_Portfolio/static/js/main.57655555.js.map"
   },
   "entrypoints": [
-    "static/css/main.80b6abc2.css",
-    "static/js/main.63b91ff7.js"
+    "static/css/main.1fb08052.css",
+    "static/js/main.57655555.js"
   ]
 }
