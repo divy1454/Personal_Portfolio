@@ -910,8 +910,12 @@ export function createClayScene(canvas) {
     const i0 = clamp(Math.floor(sS), 0, N - 1), i1 = Math.min(N - 1, i0 + 1);
     // Chapters hand over mid-scroll, except the hero on desktop, whose stage leaves with the headline before the next one arrives.
     const u = sS - i0;
-    const w0 = phone ? 0.7 : i0 === 0 ? 0.6 : 0.2, w1 = phone ? 0.98 : i0 === 0 ? 1 : 0.8;
-    const f = smooth(range(u, w0, w1));
+    const w0 = phone ? 0.5 : i0 === 0 ? 0.6 : 0.2, w1 = phone ? 0.98 : i0 === 0 ? 1 : 0.8;
+    // On desktop the hero stage has scrolled away under the header by the midpoint, so the About stage grows in place there instead of flying down from above.
+    const popIn = !phone && i0 === 0 && i1 !== i0;
+    const cut = popIn && u >= 0.55;
+    const f = popIn ? (cut ? 1 : 0) : smooth(range(u, w0, w1));
+    const g = cut ? backOut(range(u, 0.55, 0.82), 1.2) : 1;
     const c0 = cfgAt(i0), c1 = cfgAt(i1), cfg = {};
     for (const k in c0) cfg[k] = lerp(c0[k], c1[k], f);
     // On desktop the hero stage follows the mouse a little.
@@ -924,7 +928,9 @@ export function createClayScene(canvas) {
 
     const travel = !phone && i0 !== i1 ? Math.sin(Math.PI * f) : 0;
     stage.position.y = travel * 0.22;
-    clipTop.constant = -(TOP + stage.position.y);
+    stage.scale.setScalar(Math.max(g, 0.001));
+    shadow.group.scale.setScalar(Math.max(g, 0.001));
+    clipTop.constant = -(TOP * g + stage.position.y);
     plinth.set(cfg.L, cfg.R);
     shadow.set(cfg.L, cfg.R);
     shadow.mat.opacity = 0.26 * (1 - travel * 0.6);
@@ -942,11 +948,12 @@ export function createClayScene(canvas) {
     key.position.set(KEY.x * cfg.side, KEY.y, KEY.z);
 
     // The current exhibit sinks just before the stage sets off, and the next one rises only once the stage has arrived.
-    const arrived = f >= 0.85, settled = u < w0 - 0.05;
+    const arrived = popIn ? g >= 0.9 : f >= 0.85, settled = u < w0 - 0.05;
     for (let i = 0; i < N; i++) {
       const ex = EX[i];
       const target = i0 === i1 ? (i === i0 ? 1 : 0) : (i === i0 && settled) || (i === i1 && arrived) ? 1 : 0;
       if (!paused || snap) P[i] = reduce || snap ? target : clamp(P[i] + (target > P[i] ? dt / ex.enter : -dt / ex.exit));
+      if (cut && i === 0) P[0] = 0; // the letters are already off screen; never let them sink on the About stage
       ex.group.visible = P[i] > 0.001;
       if (ex.group.visible) {
         // A scene plays as its chapter scrolls past the stage.
@@ -986,7 +993,7 @@ export function createClayScene(canvas) {
       introT += dt;
     }
     const s = sFromScroll(window.scrollY);
-    sS = reduce ? s : sS + (s - sS) * (1 - Math.exp(-dt * 6));
+    sS = reduce ? s : sS + (s - sS) * (1 - Math.exp(-dt * 5));
     if (Math.abs(s - sS) < 1e-4) sS = s;
     step(dt);
     renderer.render(scene, camera);

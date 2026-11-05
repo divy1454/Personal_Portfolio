@@ -121,7 +121,7 @@ footer { position: relative; z-index: 1; }
   .top nav a:not(.resume) { display: none; }
   main { padding-top: var(--zone); }
   .hero__stage { display: none; }
-  .hero__text { display: block; padding-block: 24px 48px; }
+  .hero__text { display: block; padding-block: 24px 88px; }
   .hero__side { padding-bottom: 0; margin-top: 24px; }
   .chapter__grid { display: block; min-height: calc(100vh - var(--zone)); padding-block: 40px 64px; }
   .chapter + .chapter .chapter__text { padding-top: 32px; border-top: 1px solid var(--line); }
