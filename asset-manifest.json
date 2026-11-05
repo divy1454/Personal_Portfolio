@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Personal_Portfolio/static/css/main.1fb08052.css",
-    "main.js": "/Personal_Portfolio/static/js/main.57655555.js",
+    "main.css": "/Personal_Portfolio/static/css/main.5afda8a7.css",
+    "main.js": "/Personal_Portfolio/static/js/main.20186f2e.js",
     "static/media/fraunces-latin-full-normal.woff2": "/Personal_Portfolio/static/media/fraunces-latin-full-normal.4e5db5e80eb27f260ed3.woff2",
     "static/media/fraunces-latin-ext-full-normal.woff2": "/Personal_Portfolio/static/media/fraunces-latin-ext-full-normal.587cc2e45c55dd475854.woff2",
     "static/media/fraunces-vietnamese-full-normal.woff2": "/Personal_Portfolio/static/media/fraunces-vietnamese-full-normal.902ed62e0c1ac09fad15.woff2",
@@ -18,11 +18,11 @@
     "static/media/instrument-sans-latin-ext-600-normal.woff2": "/Personal_Portfolio/static/media/instrument-sans-latin-ext-600-normal.d0888c9f1054024a8ab1.woff2",
     "static/media/instrument-sans-latin-ext-400-normal.woff2": "/Personal_Portfolio/static/media/instrument-sans-latin-ext-400-normal.7d6f64fd11a42d9dca07.woff2",
     "index.html": "/Personal_Portfolio/index.html",
-    "main.1fb08052.css.map": "/Personal_Portfolio/static/css/main.1fb08052.css.map",
-    "main.57655555.js.map": "/Personal_Portfolio/static/js/main.57655555.js.map"
+    "main.5afda8a7.css.map": "/Personal_Portfolio/static/css/main.5afda8a7.css.map",
+    "main.20186f2e.js.map": "/Personal_Portfolio/static/js/main.20186f2e.js.map"
   },
   "entrypoints": [
-    "static/css/main.1fb08052.css",
-    "static/js/main.57655555.js"
+    "static/css/main.5afda8a7.css",
+    "static/js/main.20186f2e.js"
   ]
 }
