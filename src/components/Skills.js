@@ -1,24 +1,26 @@
 import React from 'react';
 
-const areas = [
-  { area: 'Frontend', items: ['React', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Bootstrap'] },
-  { area: 'Backend', items: ['Node.js', 'Express.js', 'PHP', 'Laravel', 'REST APIs'] },
-  { area: 'Database', items: ['MySQL', 'MongoDB'] },
-  { area: 'Mobile', items: ['React Native'] },
-  { area: 'Tools', items: ['Git', 'GitHub', 'VS Code', 'Postman'] },
+const rows = [
+  { label: 'Frontend', value: 'React, JavaScript, HTML5, CSS3, Tailwind CSS, Bootstrap' },
+  { label: 'Backend', value: 'Node.js, Express.js, PHP, Laravel, REST APIs' },
+  { label: 'Database', value: 'MySQL, MongoDB' },
+  { label: 'Mobile', value: 'React Native' },
+  { label: 'Tools', value: 'Git, GitHub, VS Code, Postman' },
 ];
 
 const Skills = () => (
-  <section className="chapter" id="skills" data-chapter="skills" data-side="right">
+  <section className="chapter" id="skills" data-chapter="skills" data-side="left">
     <div className="wrap chapter__grid">
+      <div className="slot" aria-hidden="true" />
       <div className="chapter__text">
-        <p className="label">Skills</p>
-        <h2>What I work with</h2>
+        <p className="kicker">Skills</p>
+        <h2>The stack I work in</h2>
+        <p>Frontend first, with enough backend to ship a whole product on my own.</p>
         <dl className="rows">
-          {areas.map(({ area, items }) => (
-            <div key={area}>
-              <dt>{area}</dt>
-              <dd>{items.join(' · ')}</dd>
+          {rows.map((row) => (
+            <div key={row.label}>
+              <dt>{row.label}</dt>
+              <dd>{row.value}</dd>
             </div>
           ))}
         </dl>

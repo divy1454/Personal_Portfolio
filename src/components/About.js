@@ -8,18 +8,19 @@ const facts = [
 ];
 
 const About = () => (
-  <section className="chapter" id="about" data-chapter="about" data-side="left">
+  <section className="chapter" id="about" data-chapter="about" data-side="right">
     <div className="wrap chapter__grid">
+      <div className="slot" aria-hidden="true" />
       <div className="chapter__text">
-        <p className="label">About</p>
+        <p className="kicker">About</p>
         <h2>Business software, built in React</h2>
         <p>
-          I’m a frontend developer working in React. I build business software: lead pipelines, dashboards with search,
-          filters and pagination, and role-based access on top of REST APIs.
+          I’m a frontend developer working in React. I build the software a business runs on day to day: lead
+          pipelines, dashboards with search, filters and pagination, and role-based access on top of REST APIs.
         </p>
         <p>
-          Most of that work went into an enterprise CRM in live production. Outside it, I’ve built a React Native app for
-          textile businesses, a PHP inventory system, and JDMatcher, a SaaS for US IT staffing agencies.
+          Most of that work went into an enterprise CRM that is in live production. Outside it, I’ve built a React
+          Native app for textile businesses, a PHP inventory system, and JDMatcher, a SaaS for US IT staffing agencies.
         </p>
         <dl className="facts">
           {facts.map((fact) => (

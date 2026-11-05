@@ -6,31 +6,31 @@ const projects = [
   {
     id: 'work',
     chapter: 'crm',
-    side: 'right',
+    side: 'left',
     title: 'Enterprise CRM system',
-    meta: 'Live production at Spontaneous Enterprise',
-    text: 'A CRM for managing leads, tasks and administrative workflows. I built the lead lifecycle end to end, wired secure REST APIs with role-based access, and made the dashboards the team works from.',
-    stack: ['React', 'REST API', 'JavaScript', 'CSS'],
+    meta: 'In live production at Spontaneous Enterprise',
+    text: 'A CRM for managing leads, tasks and administrative workflows. I built the lead lifecycle end to end, wired secure REST APIs with role-based access, and made the dashboards the team works from every day.',
+    stack: 'React, REST APIs, JavaScript, CSS',
     note: 'Private, under NDA',
   },
   {
     id: 'jdmatcher',
     chapter: 'jd',
-    side: 'left',
+    side: 'right',
     title: 'JDMatcher',
     meta: 'SaaS and Chrome extension',
-    text: 'A SaaS for US IT staffing agencies. Its Chrome extension checks a job post against a bench candidate’s resume, returns an apply or skip verdict and can autofill the application. Next.js portals cover recruiters, agency admins and billing.',
-    stack: ['Next.js', 'TypeScript', 'Fastify', 'PostgreSQL', 'Chrome MV3'],
+    text: 'A SaaS for US IT staffing agencies. Its Chrome extension checks a job post against a bench candidate’s resume, returns an apply-or-skip verdict and can autofill the application. Next.js portals cover recruiters, agency admins and billing.',
+    stack: 'Next.js, TypeScript, Fastify, PostgreSQL, Chrome MV3',
     links: [{ label: 'Source on GitHub', href: 'https://github.com/divy1454/JDMatcher' }],
   },
   {
     id: 'texport',
     chapter: 'texport',
-    side: 'right',
+    side: 'left',
     title: 'TexPort App',
     meta: 'Mobile app and admin panel',
     text: 'A textile management app with staff attendance and salary modules. Secure sign-in, subscription-based admin management and real-time sync through Laravel APIs.',
-    stack: ['React Native', 'Laravel API', 'MySQL'],
+    stack: 'React Native, Laravel API, MySQL',
     links: [
       { label: 'Source', href: 'https://github.com/divy1454/TexPortApp' },
       { label: 'Live demo', href: 'https://textile.texportapp.in/' },
@@ -39,11 +39,11 @@ const projects = [
   {
     id: 'inventory',
     chapter: 'inventory',
-    side: 'left',
+    side: 'right',
     title: 'Inventory management system',
     meta: 'Web application',
-    text: 'An inventory app with role-based sign-in and modules for billing, reporting and product management.',
-    stack: ['PHP', 'MySQL', 'Bootstrap'],
+    text: 'An inventory app with role-based sign-in and modules for billing, reporting and product management, built for a small warehouse to keep its stock straight.',
+    stack: 'PHP, MySQL, Bootstrap',
     links: [{ label: 'Source on GitHub', href: 'https://github.com/divy1454/InventoryManagement' }],
   },
 ];
@@ -53,14 +53,15 @@ const Projects = () => (
     {projects.map((project, index) => (
       <section className="chapter" id={project.id} key={project.id} data-chapter={project.chapter} data-side={project.side}>
         <div className="wrap chapter__grid">
+          <div className="slot" aria-hidden="true" />
           <div className="chapter__text">
-            <p className="label">
-              Selected work · {index + 1} of {projects.length}
+            <p className="kicker">
+              Selected work, {index + 1} of {projects.length}
             </p>
             <h2>{project.title}</h2>
             <p className="meta">{project.meta}</p>
             <p>{project.text}</p>
-            <p className="stack">{project.stack.join(' · ')}</p>
+            <p className="stack">{project.stack}</p>
             <div className="more">
               {project.note && <span className="private">{project.note}</span>}
               {project.links &&

@@ -12,7 +12,7 @@ const EMAIL = 'divy9954@gmail.com';
 const EMPTY = { from_name: '', from_email: '', message: '', company: '' };
 
 const notes = {
-  sent: 'Thanks, your message is on its way. I’ll reply by email.',
+  sent: 'Sent. I’ll reply by email within a day.',
   error: `That didn’t send. Please email me at ${EMAIL} instead.`,
 };
 
@@ -72,12 +72,13 @@ const Contact = () => {
   };
 
   return (
-    <section className="chapter" id="contact" data-chapter="contact" data-side="right">
+    <section className="chapter" id="contact" data-chapter="contact" data-side="left">
       <div className="wrap chapter__grid">
+        <div className="slot" aria-hidden="true" />
         <div className="chapter__text">
-          <p className="label">Contact</p>
+          <p className="kicker">Contact</p>
           <h2>Let’s build something</h2>
-          <p>Have a role or a project in mind? Email me directly or send a note with the form.</p>
+          <p>Have a role or a project in mind? Email me directly, or send a note with the form and I’ll reply within a day.</p>
 
           <dl className="rows">
             <div>
@@ -86,7 +87,7 @@ const Contact = () => {
                 <a className="link" href={`mailto:${EMAIL}`}>
                   {EMAIL}
                 </a>
-                <button className="copy" type="button" onClick={copyEmail}>
+                <button className="copy" type="button" onClick={copyEmail} aria-label={`Copy ${EMAIL}`}>
                   {copyLabel}
                 </button>
               </dd>
@@ -117,7 +118,7 @@ const Contact = () => {
             </div>
           </dl>
 
-          <form className="form" onSubmit={submit}>
+          <form className="form" id="contact-form" onSubmit={submit}>
             <div className="field">
               <label htmlFor="contact-name">Name</label>
               <input

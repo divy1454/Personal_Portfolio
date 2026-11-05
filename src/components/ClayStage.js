@@ -17,12 +17,7 @@ const ClayStage = () => {
     };
   }, []);
 
-  return (
-    <>
-      <canvas id="stage" ref={canvasRef} aria-hidden="true" />
-      <div className="fade" aria-hidden="true" />
-    </>
-  );
+  return <canvas id="stage" ref={canvasRef} aria-hidden="true" />;
 };
 
 export default ClayStage;
